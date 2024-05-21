@@ -1,10 +1,17 @@
-n=int(input("Ingrese un numero positivo de uno,dos,tres o cuatro digitos:"))
+e_500_900 = 0
+e_mas_900 = 0
+g_total = 0
 
-if n >= 1 and n <= 9:
-    print("El numero tiene un digito.")
-if n >= 10 and n <= 99:
-    print("El numero tiene dos digitos.")
-if n >= 100 and n <= 999:
-    print("El numero tiene tres digitos.")
-if n >= 1000 and n <= 9999:
-    print("El numero tiene cuatro digitos.")
+while True:
+    sueldo = float(input("Sueldo mensual (-1 para finalizar): "))
+    if sueldo == -1:
+        break
+    g_total += sueldo
+    if 500000 <= sueldo <= 900000:
+        e_500_900 += 1
+    elif sueldo > 900000:
+        e_mas_900 += 1
+
+print("Empleados ($500k - $900k):", e_500_900)
+print("Empleados (>$900k):", e_mas_900)
+print("Gasto total:", g_total)
