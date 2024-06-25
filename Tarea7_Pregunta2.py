@@ -1,15 +1,14 @@
-palabras = []
+lista = []
 
-print("Ingrese palabras (deje en blanco para finalizar):")
-
-# Bucle para ingresar palabras hasta que se ingrese una cadena vacía
 while True:
-    palabra = input()
+    palabra = input("Ingrese una palabra: ")
     if palabra == "":
         break
-    palabras.append(palabra)
+    lista.append(palabra)
 
-# Contar y mostrar cuántas letras 'A' o 'a' tiene cada palabra
-for palabra in palabras:
-    cuenta_a = palabra.lower().count('a')
-    print(f"La palabra '{palabra}' tiene {cuenta_a} letras 'A' o 'a'.")
+for x in lista:
+    cont = 0
+    for y in x:
+        if y in("A","a"):
+            cont = cont + 1
+    print("La palabra ", x , " tiene ", cont , " letra A o a ")
