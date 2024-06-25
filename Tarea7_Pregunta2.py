@@ -1,14 +1,13 @@
-lista = []
+palabras = []
+
+print("Ingrese palabras (deje en blanco para finalizar):")
 
 while True:
-    palabra = input("Ingrese una palabra: ")
+    palabra = input()
     if palabra == "":
         break
-    lista.append(palabra)
+    palabras.append(palabra)
 
-for x in lista:
-    cont = 0
-    for y in x:
-        if y in("A","a"):
-            cont = cont + 1
-    print("La palabra ", x , " tiene ", cont , " letra A o a ")
+for palabra in palabras:
+    cuenta_a = palabra.lower().count('a')
+    print(f"La palabra '{palabra}' tiene {cuenta_a} letras 'A' o 'a'.")
